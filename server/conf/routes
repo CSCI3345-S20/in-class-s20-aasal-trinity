@@ -3,7 +3,17 @@
 # ~~~~
 
 # Home page
-GET        /                             edu.trinity.videoquizreact.controllers.Application.index
+GET        /                             controllers.Application.index
+GET		     /enterName				             controllers.Application.enterName
+GET		     /rememberName			           controllers.Application.rememberName(name)
+GET		     /forgetName				           controllers.Application.forgetName
+
+GET        /tempPage                     controllers.TempController.tempPage
+GET        /temps                        controllers.TempController.temps(month: Int, year: Int)
++ nocsrf
+POST       /tempsPost                    controllers.TempController.tempsPost
+GET        /tempsPlotPage                controllers.TempController.tempsPlotPage
+GET        /tempsPlotPNG                 controllers.TempController.tempsPlotPNG
 
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)
